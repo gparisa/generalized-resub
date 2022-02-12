@@ -11,8 +11,7 @@ To run experiments:
 ```
 python run_UCI.py -max_total N -out output_file
 ```
-**options:**
-
+*options:* <br>
 -max_total N: skip the datasets with total of samples larger than N. <br>
 -out output_file: the output file.
 
