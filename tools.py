@@ -127,6 +127,7 @@ def run_exp(xtr, ytr, xts, yts,
 
     return err_hidlay
 
+#-----------------------------------------------------------------------------
 class StopOnPoint(tf.keras.callbacks.Callback):
     '''
     source for this class StopOnPoint:
