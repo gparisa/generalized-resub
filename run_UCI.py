@@ -8,13 +8,12 @@ import pickle
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-dir', default = "data", type = str, help = "data directory")
-parser.add_argument('-file', default = "result.log", type = str, help = "Output File")
-parser.add_argument('-max_tot', default = 5000, type = int, help = "Maximum number of data samples")
+parser.add_argument('-file', default = "out.log", type = str, help = "Output File")
+parser.add_argument('-max_total', default = 10000, type = int, help = "Maximum total number of samples")
 
 args = parser.parse_args()
 
-MAX_N_TOT = args.max_tot
-MAX_DEP = args.max_dep
+MAX_N_TOT = args.max_total
 datadir = args.dir
 
 outf = open(args.file, "w")
