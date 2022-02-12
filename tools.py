@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jan  5 14:58:38 2022
-
-@author: Parisa
-"""
 import numpy as np
 import time
 
@@ -25,8 +18,6 @@ def get_x_perClass(x, y):
     xx = {y_cls: xtr[ytr == y_cls, :] for y_cls in classes}
     return xx
                     
-#-----------------------------------------------------------------------------
-
 def create_FC(input_shape, num_classes,
               num_hidden_layers, num_units,
               optimizer_ = 'Adam', dropout_rate= 0.0):    
@@ -59,8 +50,6 @@ def create_FC(input_shape, num_classes,
                 metrics=['accuracy']) 
     return clf
 
-#-----------------------------------------------------------------------------
-
 def get_err(xtr, ytr, xts, yts, model, factor, mc_samples):
     # sss = time.time()
 
@@ -89,23 +78,7 @@ def get_err(xtr, ytr, xts, yts, model, factor, mc_samples):
             'bolster': bol_err,
             'pp': pp_err,
             'bolster_pp': bolpp_err}
-
-#-----------------------------------------------------------------------------
-
-class StopOnPoint(tf.keras.callbacks.Callback):
-    '''
-    source for this class:
-        https://stackoverflow.com/questions/67216419/stop-training-model-when-accuracy-reached-greater-than-0-99/67217202
-    '''
-    def __init__(self, point):
-        super(StopOnPoint, self).__init__()
-        self.point = point    
-    def on_epoch_end(self, epoch, logs=None): 
-        accuracy = logs["accuracy"]
-        if accuracy >= self.point:
-            self.model.stop_training = True
           
-#-----------------------------------------------------------------------------
 def run_exp(xtr, ytr, xts, yts, 
             width_list, depth_list, 
             batch_size_list, dropout_rate_list,
@@ -154,5 +127,16 @@ def run_exp(xtr, ytr, xts, yts,
 
     return err_hidlay
 
-                    
+class StopOnPoint(tf.keras.callbacks.Callback):
+    '''
+    source for this class StopOnPoint:
+        https://stackoverflow.com/questions/67216419/stop-training-model-when-accuracy-reached-greater-than-0-99/67217202
+    '''
+    def __init__(self, point):
+        super(StopOnPoint, self).__init__()
+        self.point = point    
+    def on_epoch_end(self, epoch, logs=None): 
+        accuracy = logs["accuracy"]
+        if accuracy >= self.point:
+            self.model.stop_training = True                    
                     
