@@ -1,18 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Feb 10 12:28:39 2022
-
-@author: Parisa
-"""
-
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jan  4 14:27:38 2022
-
-@author: Parisa
-"""
 import numpy as np
 from scipy import stats
 from sklearn import metrics
@@ -36,7 +21,6 @@ class bolstering():
         classes = sorted(set(ytr.reshape(len(ytr),)))
         xx = {y_clas: xtr[ytr == y_clas, :] for y_clas in classes}
         return xx
-    
     
     def get_sigma(self):
         def get_sigma_perclass(x_cls):
@@ -66,7 +50,6 @@ class bolstering():
     
         return {y_cls: get_sigma_perclass(x_cls) for y_cls, x_cls in self.xx.items()}
 
-#__________________________________________________________________
     def generate_mc_sample(self, n_mc_sample, 
                            save_to_file=True,
                            input_shape=None,
@@ -98,5 +81,3 @@ class bolstering():
                                           data= mc_smpl_clas)
         return mc_smpls
             
-#__________________________________________________________________
-#__________________________________________________________________
