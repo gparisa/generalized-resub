@@ -7,7 +7,7 @@ class bolstering():
     x (numpy array): feature vectors
     y (numpy array or list): labels
     bolstering type (str): 'original' or 'naive_Bayes'
-    
+    factor (int): calibration factor, which will be used in a future update of bolstering (i.e. calibrated bolstering)
     '''
     def __init__(self, x, y, bolstering_type='original', factor=1):
         self.x = x
