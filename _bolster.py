@@ -3,6 +3,12 @@ from scipy import stats
 from sklearn import metrics
 
 class bolstering():
+    '''
+    x (numpy array): feature vectors
+    y (numpy array or list): labels
+    bolstering type (str): 'original' or 'naive_Bayes'
+    
+    '''
     def __init__(self, x, y, bolstering_type='original', factor=1):
         self.x = x
         self.y = y
