@@ -64,6 +64,9 @@ class bolstering():
                            save_to_file=True,
                            input_shape=None,
                            filename= None):
+        '''
+        n_mc_sample (int): number of Monte-Carlo samples for approximation of the integral in bolstered resubstitution error estimator.
+        '''
         if input_shape is None:
             input_shape = self.x.shape[1:]
             
