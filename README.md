@@ -3,6 +3,9 @@ The theoretical framework for error estimators are explained in our paper [Gener
 ### Running experiment on high dimensional and noisy synthetic data:
 To run an example of experiment:
 1) generate synthetic data by running 
+```
+```
+2)
 
 ### Running experiment on UCI data:
 Download the datasets used in paper "Do we need hundreds of classifiers to solve real world classification problems?" from http://persoal.citius.usc.es/manuel.fernandez.delgado/papers/jmlr/data.tar.gz or, alternatively, run 
