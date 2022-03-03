@@ -18,3 +18,4 @@ python run_UCI.py -max_total N -out output_file
 -out output_file: the output file.
 
 ### Running experiment on MNIST datasets:
+Coming soon...
